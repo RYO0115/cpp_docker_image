@@ -1,0 +1,6 @@
+# workspaceの中身は無視するが、workspaceディレクトリ自体はGitに追跡させる
+/workspace/*
+!/workspace/.gitkeep
+
+# Dockerやビルドの一時ファイル
+.DS_Store

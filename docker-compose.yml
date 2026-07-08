@@ -1,0 +1,12 @@
+services:
+  cpp-dev:
+    build: .
+    container_name: cpp_development
+    volumes:
+      # workspace ディレクトリのみをコンテナ内の作業スペースにマウント
+      - ./workspace:/workspace
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    tty: true

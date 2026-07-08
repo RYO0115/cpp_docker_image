@@ -1,0 +1,29 @@
+{
+    "name": "C++ Development Environment",
+    // ルートにある docker-compose.yml を指定
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    // docker-compose.yml 内のサービス名を指定
+    "service": "cpp-dev",
+    // VS Codeがコンテナ内で開くデフォルトのディレクトリ
+    "workspaceFolder": "/workspace",
+    // コンテナ内で自動インストールするVS Code拡張機能
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools", // C/C++ 公式拡張（補完・デバッグ）
+                "ms-vscode.cpptools-extension-pack", // C/C++ パック
+                "twxs.cmake", // CMakeのシンタックスハイライト
+                "ms-vscode.cmake-tools", // CMakeのビルド・デバッグ支援
+                // この先はお好み
+                "mhutchie.git-graph", // Git Graph
+                "vscodevim.vim" // Vim
+            ]
+        }
+    },
+    // コンテナ作成後に実行したいコマンド（必要であれば）
+    // "postCreateCommand": "uname -a",
+    // ホストマシンの一般ユーザー権限と合わせる場合は指定（通常はrootでOK）
+    "remoteUser": "root"
+}
